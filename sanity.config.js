@@ -9,8 +9,8 @@ export default defineConfig({
   name: 'default',
   title: 'timechain-labs-sanity-studio',
 
-  projectId: process.env.SANITY_PROJECT_ID,
-  dataset: process.env.SANITY_DATASET,
+  projectId: 'e3lypy0y',
+  dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
 
