@@ -4,9 +4,9 @@ export default {
   title: 'Testimonials',
   fields: [
     {
-      name: 'company_name',
+      name: 'organization',
       type: 'string',
-      title: 'Company Name',
+      title: 'Organization Name',
     },
     {
       name: 'name',
@@ -19,9 +19,9 @@ export default {
       title: 'Position',
     },
     {
-      name: 'content',
+      name: 'testimonial',
       type: 'text',
-      title: 'Content',
+      title: 'Testimonial',
     },
     {
       name: 'profile_url',
