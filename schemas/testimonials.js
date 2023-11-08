@@ -9,6 +9,11 @@ export default {
       title: 'Organization Name',
     },
     {
+      name: 'organization_logo_url',
+      type: 'string',
+      title: 'Organization Logo URL',
+    },
+    {
       name: 'name',
       type: 'string',
       title: 'Name',
@@ -24,9 +29,9 @@ export default {
       title: 'Testimonial',
     },
     {
-      name: 'profile_url',
+      name: 'profile_image_url',
       type: 'string',
-      title: 'Profile URL',
+      title: 'Profile Image URL',
     },
   ],
 }
