@@ -9,6 +9,11 @@ export default {
       title: 'Title',
     },
     {
+      type: 'string',
+      title: 'Route',
+      name: 'slug',
+    },
+    {
       name: 'content',
       type: 'text',
       title: 'Content',
