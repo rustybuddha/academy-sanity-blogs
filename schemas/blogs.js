@@ -40,9 +40,14 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{ type: 'blogs' }], 
+          to: [{type: 'blogs'}],
         },
       ],
+    },
+    {
+      name: 'featured',
+      type: 'boolean',
+      title: 'Featured',
     },
   ],
 }
