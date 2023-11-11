@@ -49,5 +49,13 @@ export default {
       type: 'boolean',
       title: 'Featured',
     },
+    {
+      name: 'impressions',
+      type: 'number',
+      title: 'Impressions',
+      validation: (Rule) => Rule.integer().min(0),
+      default: 0,
+    }
+    ,
   ],
 }
