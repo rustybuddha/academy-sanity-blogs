@@ -20,8 +20,13 @@ export default {
     },
     {
       name: 'content',
-      type: 'text',
+      type: 'array',
       title: 'Content',
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'summary',
@@ -55,7 +60,6 @@ export default {
       title: 'Impressions',
       validation: (Rule) => Rule.integer().min(0),
       default: 0,
-    }
-    ,
+    },
   ],
 }
