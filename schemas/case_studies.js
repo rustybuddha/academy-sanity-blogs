@@ -1,7 +1,7 @@
 export default {
-    name: 'case-studies',
+    name: 'case_studies',
     type: 'document',
-    title: 'case-studies',
+    title: 'case studies',
     fields: [
       {
         name: 'title',
@@ -29,54 +29,149 @@ export default {
         title: 'Summary',
       },
       {
-        name: 'summary_url',
+        name:'logo',
+        type:'url',
+        title:'Logo URL'
+      },
+      {
+        name: 'hero1_url',
         type: 'url',
-        title: 'Summary URL',
+        title: 'Hero URL 1',
       },
       {
-        name: 'brief',
-        type: 'array',
-        title: 'Brief',
-        of: [
-          {
-            type: 'block',
-          },
-        ],
-      },
-      {
-        name: 'problem',
-        type: 'array',
-        title: 'Problem',
-        of: [
-          {
-            type: 'block',
-          },
-        ],
-      },
-      {
-        name: 'problem_url',
+        name: 'hero2_url',
         type: 'url',
-        title: 'Problem URL',
-      },
-      {
-        name: 'solution',
-        type: 'array',
-        title: 'Solution',
-        of: [
-          {
-            type: 'block',
-          },
-        ],
-      },
-      {
-        name: 'solution_url',
-        type: 'url',
-        title: 'Solution URL',
+        title: 'Hero URL 2',
       },
       {
         name: 'cover_url',
         type: 'url',
         title: 'Cover URL',
+      },
+      {
+        name: 'brief',
+        type: 'object',
+        title: 'Brief',
+        fields:[
+          {
+            name:'title',
+            type:'string',
+            title:'Title',
+          },
+          {
+            name:'content',
+            type:'array',
+            title:'Content',
+            of: [
+              {
+                type: 'block',
+              },
+            ],
+          },
+          {
+            name:'url',
+            type:'url',
+            title:'Image URL',
+          }
+        ]
+      },
+      {
+        name: 'problem',
+        type: 'object',
+        title: 'Problem',
+        fields:[
+          {
+            name:'title',
+            type:'string',
+            title:'Title',
+          },
+          {
+            name:'content',
+            type:'array',
+            title:'Content',
+            of: [
+              {
+                type: 'block',
+              },
+            ],
+          },
+          {
+            name:'url',
+            type:'url',
+            title:'Image URL',
+          }
+        ]
+      },
+      {
+        name: 'solution',
+        type: 'object',
+        title: 'Solution',
+        fields:[
+          {
+            name:'title',
+            type:'string',
+            title:'Title',
+          },
+          {
+            name:'content',
+            type:'array',
+            title:'Content',
+            of: [
+              {
+                type: 'block',
+              },
+            ],
+          },
+          {
+            name:'url',
+            type:'url',
+            title:'Image URL',
+          } 
+        ]
+        
+      },
+      {
+        name: 'companySpec',
+        type: 'object',
+        title: 'Company Specification',
+        fields: [
+          {
+            name: 'type',
+            type: 'string',
+            title: 'Type',
+          },
+          {
+            name: 'industry',
+            type: 'string',
+            title: 'Industry',
+          },
+          {
+            name: 'geography',
+            type: 'string',
+            title: 'Geography',
+          },
+          {
+            name: 'year',
+            type: 'string',
+            title: 'Year',
+          },
+          {
+            name: 'companySize',
+            type: 'string',
+            title: 'Company Size',
+          },
+          {
+            name: 'segment',
+            type: 'string',
+            title: 'Segment',
+          },
+          {
+            name: 'techStack',
+            type: 'array',
+            title: 'Tech Stack',
+            of: [{ type: 'string' }],
+          },
+        ],
       },
       {
         name: 'impressions',
