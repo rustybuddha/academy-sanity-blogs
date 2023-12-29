@@ -14,6 +14,11 @@ export default {
         title: 'Subtitle',
       },
       {
+        name:'type',
+        type:'number',
+        title:'Type',
+      },
+      {
         title: 'Slug',
         name: 'slug',
         type: 'slug',
