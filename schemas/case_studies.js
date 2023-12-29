@@ -68,11 +68,6 @@ export default {
               },
             ],
           },
-          {
-            name:'url',
-            type:'url',
-            title:'Image URL',
-          }
         ]
       },
       {
@@ -96,7 +91,7 @@ export default {
             ],
           },
           {
-            name:'url',
+            name:'image',
             type:'url',
             title:'Image URL',
           }
@@ -123,7 +118,7 @@ export default {
             ],
           },
           {
-            name:'url',
+            name:'image',
             type:'url',
             title:'Image URL',
           } 
