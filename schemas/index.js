@@ -1,5 +1,8 @@
 import testimonials from './testimonials'
 import blogs from './blogs'
 import case_studies from './case_studies'
+import medias from './medias'
+import news from './news'
+import articles from './articles'
 
-export const schemaTypes = [testimonials, blogs, case_studies]
+export const schemaTypes = [testimonials, blogs, case_studies, medias, news, articles]
