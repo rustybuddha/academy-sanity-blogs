@@ -19,6 +19,24 @@ export default {
       },
     },
     {
+      name: 'doc_type',
+      title: 'Doc Type',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Blog', value: 'blog'},
+          {title: 'News', value: 'news'},
+          {title: 'Article', value: 'article'},
+        ],
+      },
+    },
+    {
+      name: 'subtitle',
+      type: 'string',
+      title: 'Sub Title',
+      hidden: ({parent, value}) => parent.doc_type === 'blog',
+    },
+    {
       name: 'content',
       type: 'array',
       title: 'Content',
@@ -37,6 +55,14 @@ export default {
       name: 'cover_url',
       type: 'url',
       title: 'Cover URL',
+    },
+    {
+      name: 'cover',
+      title: 'Cover',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: 'recommendedBlogs',
