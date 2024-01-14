@@ -1,185 +1,225 @@
+import phase from './phase'
+
 export default {
-    name: 'case_studies',
-    type: 'document',
-    title: 'case studies',
-    fields: [
-      {
-        name: 'title',
-        type: 'string',
-        title: 'Title',
+  name: 'case_studies',
+  type: 'document',
+  title: 'case studies',
+  fields: [
+    {
+      name: 'title',
+      type: 'string',
+      title: 'Title',
+    },
+    {
+      title: 'Slug',
+      name: 'slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 200,
+        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
-      {
-        name: 'subtitle',
-        type: 'string',
-        title: 'Subtitle',
+    },
+    {
+      name: 'hero_image',
+      title: 'Hero Image',
+      type: 'image',
+      options: {
+        hotspot: true,
       },
-      {
-        name:'type',
-        type:'number',
-        title:'Type',
-      },
-      {
-        title: 'Slug',
-        name: 'slug',
-        type: 'slug',
-        options: {
-          source: 'title',
-          maxLength: 200,
-          slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+      description: 'Upload a hero image for the project case study',
+    },
+    {
+      name: 'stats',
+      title: 'Stats',
+      type: 'array',
+      of: [
+        {
+          name: 'item',
+          title: 'Item',
+          type: 'object',
+          fields: [
+            {
+              name: 'stat',
+              title: 'Stat',
+              type: 'string',
+            },
+            {
+              name: 'label',
+              title: 'Label',
+              type: 'string',
+            },
+          ],
         },
-      },
-      {
-        name: 'summary',
-        type: 'text',
-        title: 'Summary',
-      },
-      {
-        name:'logo',
-        type:'url',
-        title:'Logo URL'
-      },
-      {
-        name: 'hero1_url',
-        type: 'url',
-        title: 'Hero URL 1',
-      },
-      {
-        name: 'hero2_url',
-        type: 'url',
-        title: 'Hero URL 2',
-      },
-      {
-        name: 'cover_url',
-        type: 'url',
-        title: 'Cover URL',
-      },
-      {
-        name: 'brief',
-        type: 'object',
-        title: 'Brief',
-        fields:[
-          {
-            name:'title',
-            type:'string',
-            title:'Title',
+      ],
+    },
+    {
+      name: 'about',
+      title: 'About',
+      type: 'object',
+      fields: [
+        {
+          name: 'industry',
+          title: 'Industry',
+          type: 'string',
+        },
+        {
+          name: 'company_size',
+          title: 'Company Size',
+          type: 'string',
+        },
+        {
+          name: 'technologies',
+          title: 'Technologies',
+          type: 'string',
+        },
+        {
+          name: 'domain_area',
+          title: 'Domain Area',
+          type: 'string',
+        },
+      ],
+    },
+    {
+      name: 'challenge',
+      title: 'Challenge',
+      type: 'object',
+      fields: [
+        {
+          name: 'heading',
+          title: 'Heading',
+          type: 'string',
+          description: 'Enter the heading for the challenge section',
+        },
+        {
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+          description: 'Provide a description for the challenge section',
+        },
+        {
+          name: 'image',
+          title: 'Image',
+          type: 'image',
+          options: {
+            hotspot: true,
           },
-          {
-            name:'content',
-            type:'array',
-            title:'Content',
-            of: [
-              {
-                type: 'block',
+          description: 'Upload an image for the challenge section',
+        },
+      ],
+    },
+    {
+      name: 'solution',
+      title: 'Solution',
+      type: 'object',
+      fields: [
+        {
+          name: 'heading',
+          title: 'Heading',
+          type: 'string',
+          description: 'Enter the heading for the solution section',
+        },
+        {
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+          description: 'Provide a description for the solution section',
+        },
+        {
+          name: 'image',
+          title: 'Image',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          description: 'Upload an image for the solution section',
+        },
+      ],
+    },
+    {
+      name: 'benefits',
+      title: 'Benefits',
+      type: 'object',
+      fields: [
+        {
+          name: 'heading',
+          title: 'Heading',
+          type: 'string',
+          description: 'Enter the heading for the benefits section',
+        },
+        {
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+          description: 'Provide a description for the benefits section',
+        },
+        {
+          name: 'image',
+          title: 'Image',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          description: 'Upload an image for the benefits section',
+        },
+      ],
+    },
+    {
+      name: 'engagement',
+      title: 'Engagement',
+      type: 'object',
+      fields: [
+        {
+          name: 'heading',
+          title: 'Heading',
+          type: 'string',
+          description: 'Enter the heading for the engagement section',
+        },
+        {
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+          description: 'Provide a description for the engagement section',
+        },
+        {
+          name: 'phases',
+          title: 'Phases',
+          type: 'array',
+          of: [
+            {
+              type: 'reference',
+              to: [{type: 'phase'}],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'tech_stack',
+      title: 'Tech Stack',
+      type: 'object',
+      fields: [
+        {
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+          description: 'Provide a description for the techstack section',
+        },
+        {
+          name: 'logos',
+          title: 'Logos',
+          type: 'array',
+          of: [
+            {
+              type: 'image',
+              options: {
+                hotspot: true,
               },
-            ],
-          },
-        ]
-      },
-      {
-        name: 'problem',
-        type: 'object',
-        title: 'Problem',
-        fields:[
-          {
-            name:'title',
-            type:'string',
-            title:'Title',
-          },
-          {
-            name:'content',
-            type:'array',
-            title:'Content',
-            of: [
-              {
-                type: 'block',
-              },
-            ],
-          },
-          {
-            name:'image',
-            type:'url',
-            title:'Image URL',
-          }
-        ]
-      },
-      {
-        name: 'solution',
-        type: 'object',
-        title: 'Solution',
-        fields:[
-          {
-            name:'title',
-            type:'string',
-            title:'Title',
-          },
-          {
-            name:'content',
-            type:'array',
-            title:'Content',
-            of: [
-              {
-                type: 'block',
-              },
-            ],
-          },
-          {
-            name:'image',
-            type:'url',
-            title:'Image URL',
-          } 
-        ]
-        
-      },
-      {
-        name: 'companySpec',
-        type: 'object',
-        title: 'Company Specification',
-        fields: [
-          {
-            name: 'type',
-            type: 'string',
-            title: 'Type',
-          },
-          {
-            name: 'industry',
-            type: 'string',
-            title: 'Industry',
-          },
-          {
-            name: 'geography',
-            type: 'string',
-            title: 'Geography',
-          },
-          {
-            name: 'year',
-            type: 'string',
-            title: 'Year',
-          },
-          {
-            name: 'companySize',
-            type: 'string',
-            title: 'Company Size',
-          },
-          {
-            name: 'segment',
-            type: 'string',
-            title: 'Segment',
-          },
-          {
-            name: 'techStack',
-            type: 'array',
-            title: 'Tech Stack',
-            of: [{ type: 'string' }],
-          },
-        ],
-      },
-      {
-        name: 'impressions',
-        type: 'number',
-        title: 'Impressions',
-        validation: (Rule) => Rule.integer().min(0),
-        default: 0,
-      },
-    ],
-  }
-  
+              description: 'Upload a logo tech stack used',
+            },
+          ],
+        },
+      ],
+    },
+  ],
+}
