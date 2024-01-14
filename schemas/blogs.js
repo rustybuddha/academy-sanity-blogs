@@ -65,9 +65,9 @@ export default {
       },
     },
     {
-      name: 'recommendedBlogs',
+      name: 'recommend',
       type: 'array',
-      title: 'Recommended Blogs',
+      title: 'Recommended',
       of: [
         {
           type: 'reference',
