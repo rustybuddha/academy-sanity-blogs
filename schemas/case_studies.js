@@ -81,6 +81,31 @@ export default {
       ],
     },
     {
+      name: 'testimonial',
+      title: "Testimonials Section's",
+      type: 'object',
+      fields: [
+        {
+          name: 'subtitle',
+          title: 'Subtitle',
+          type: 'string',
+          description: 'Enter the subtitle',
+        },
+        {
+          name: 'heading',
+          title: 'Heading',
+          type: 'string',
+          description: 'Enter the heading',
+        },
+        {
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+          description: 'Provide a description',
+        },
+      ],
+    },
+    {
       name: 'challenge',
       title: 'Challenge',
       type: 'object',
