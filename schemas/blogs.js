@@ -7,6 +7,7 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Title',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Slug',
@@ -15,8 +16,10 @@ export default {
       options: {
         source: 'title',
         maxLength: 200,
-        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+        slugify: (input) =>
+          input.toLowerCase().replace(/\s+/g, '-').replace(/\?/g, '').slice(0, 200),
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'doc_type',
@@ -29,12 +32,14 @@ export default {
           {title: 'Article', value: 'article'},
         ],
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'subtitle',
       type: 'string',
       title: 'Sub Title',
       hidden: ({parent, value}) => parent.doc_type === 'blog',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'content',
@@ -50,6 +55,7 @@ export default {
       name: 'summary',
       type: 'text',
       title: 'Summary',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'cover_url',
@@ -63,6 +69,7 @@ export default {
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'recommend',
@@ -84,8 +91,9 @@ export default {
       name: 'impressions',
       type: 'number',
       title: 'Impressions',
-      validation: (Rule) => Rule.integer().min(0),
-      default: 0,
     },
   ],
+  initialValue: {
+    impressions: 0,
+  },
 }
