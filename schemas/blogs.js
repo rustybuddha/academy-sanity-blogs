@@ -39,7 +39,6 @@ export default {
       type: 'string',
       title: 'Sub Title',
       hidden: ({parent, value}) => parent.doc_type === 'blog',
-      validation: (Rule) => Rule.required(),
     },
     {
       name: 'content',
@@ -56,11 +55,6 @@ export default {
       type: 'text',
       title: 'Summary',
       validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'cover_url',
-      type: 'url',
-      title: 'Cover URL',
     },
     {
       name: 'cover',
