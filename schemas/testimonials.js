@@ -27,6 +27,7 @@ export default {
       name: 'testimonial',
       type: 'text',
       title: 'Testimonial',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'profile_image_url',

@@ -7,11 +7,13 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Title',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
       type: 'text',
       title: 'Description',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'image_1',
@@ -20,6 +22,7 @@ export default {
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'image_2',
@@ -28,6 +31,7 @@ export default {
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'image_3',
@@ -36,6 +40,7 @@ export default {
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'image_4',
@@ -44,6 +49,7 @@ export default {
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     },
   ],
 }

@@ -8,6 +8,7 @@ export default {
       title: 'Name',
       type: 'string',
       description: 'Enter the name of the phase',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'items',
@@ -20,6 +21,7 @@ export default {
           type: 'string',
         },
       ],
+      validation: (Rule) => Rule.required(),
     },
   ],
 }
