@@ -1,6 +1,6 @@
 export default {
   name: 'phase',
-  title: 'Phase',
+  title: 'Case Study : Phases',
   type: 'document',
   fields: [
     {

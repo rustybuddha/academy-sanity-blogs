@@ -3,7 +3,7 @@ import phase from './phase'
 export default {
   name: 'case_studies',
   type: 'document',
-  title: 'case studies',
+  title: 'Case Studies',
   fields: [
     {
       name: 'title',

@@ -1,7 +1,7 @@
 export default {
   name: 'blogs',
   type: 'document',
-  title: 'Blogs',
+  title: 'Blogs | News | Articles',
   fields: [
     {
       name: 'title',
