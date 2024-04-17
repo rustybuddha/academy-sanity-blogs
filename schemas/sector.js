@@ -1,12 +1,41 @@
+const sectors = {
+  organization: [
+    'banks',
+    'government',
+    'regulators',
+    'startups',
+    'ngos',
+    'universities',
+    'enterprise',
+  ],
+  industry: [
+    'cybersecurity',
+    'hotel',
+    'real-estate',
+    'travels',
+    'financials',
+    'gaming',
+    'fintech',
+    'luxury',
+    'tours',
+    'events',
+    'recruitment',
+    'manufacturing',
+    'sustainability',
+    'banking',
+    'fmcg',
+  ],
+}
+
 export default {
   name: 'sector',
   type: 'document',
   title: 'Sector Solution',
   fields: [
     {
-      name: 'sector_type',
+      name: 'sector_name',
       type: 'string',
-      title: 'Sector Type',
+      title: 'Sector Name',
       options: {
         list: [
           {title: 'Banks', value: 'banks'},
@@ -33,6 +62,34 @@ export default {
           {title: 'FMCG', value: 'fmcg'},
         ],
       },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'organization',
+      type: 'boolean',
+      title: 'Sector Type : Organization',
+      readOnly: true,
+      hidden: ({parent}) => {
+        const selectedType = parent?.sector_name
+        return !sectors.organization.includes(selectedType)
+      },
+    },
+    {
+      name: 'industry',
+      type: 'boolean',
+      title: 'Sector Type : Industry',
+      readOnly: true,
+      hidden: ({parent}) => {
+        const selectedType = parent?.sector_name
+        return !sectors.industry.includes(selectedType)
+      },
+    },
+    {
+      name: 'description',
+      title: 'Sector description',
+      type: 'text',
+      description:
+        'Enter summary/description of the sector which will be visible in card view on solutions page',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -71,7 +128,7 @@ export default {
                 {
                   name: 'description',
                   title: 'Description',
-                  type: 'string',
+                  type: 'text',
                   validation: (Rule) => Rule.required(),
                 },
                 {
@@ -112,7 +169,7 @@ export default {
         {
           name: 'description',
           title: 'Description',
-          type: 'string',
+          type: 'text',
         },
         {
           name: 'features',
@@ -132,7 +189,7 @@ export default {
                 {
                   name: 'description',
                   title: 'Description',
-                  type: 'string',
+                  type: 'text',
                 },
                 {
                   name: 'icon',
@@ -171,7 +228,7 @@ export default {
         {
           name: 'description',
           title: 'Description',
-          type: 'string',
+          type: 'text',
           validation: (Rule) => Rule.required(),
         },
         {
@@ -193,7 +250,7 @@ export default {
                 {
                   name: 'description',
                   title: 'Description',
-                  type: 'string',
+                  type: 'text',
                   validation: (Rule) => Rule.required(),
                 },
                 {
@@ -213,6 +270,42 @@ export default {
         },
       ],
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'how_it_works_section',
+      title: 'How it works Section',
+      type: 'object',
+      fields: [
+        {
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+        },
+        {
+          name: 'features',
+          title: 'Features',
+          type: 'array',
+          of: [
+            {
+              name: 'item',
+              title: 'Item',
+              type: 'object',
+              fields: [
+                {
+                  name: 'title',
+                  title: 'Title',
+                  type: 'string',
+                },
+                {
+                  name: 'description',
+                  title: 'Description',
+                  type: 'text',
+                },
+              ],
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'features_section',
@@ -263,7 +356,7 @@ export default {
                 {
                   name: 'answer',
                   title: 'Answer',
-                  type: 'string',
+                  type: 'text',
                   validation: (Rule) => Rule.required(),
                 },
               ],
@@ -283,8 +376,8 @@ export default {
         {
           name: 'experience',
           title: 'Partnership Experience',
-          type: 'string',
-          description: 'Enter the partnership experience decsription with TCL',
+          type: 'text',
+          description: 'Enter the partnership experience description with TCL',
           validation: (Rule) => Rule.required(),
         },
         {
@@ -300,7 +393,7 @@ export default {
         {
           name: 'company_description',
           title: 'Company Description',
-          type: 'string',
+          type: 'text',
           validation: (Rule) => Rule.required(),
         },
         {
