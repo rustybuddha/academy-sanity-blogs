@@ -65,26 +65,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'organization',
-      type: 'boolean',
-      title: 'Sector Type : Organization',
-      readOnly: true,
-      hidden: ({parent}) => {
-        const selectedType = parent?.sector_name
-        return !sectors.organization.includes(selectedType)
-      },
-    },
-    {
-      name: 'industry',
-      type: 'boolean',
-      title: 'Sector Type : Industry',
-      readOnly: true,
-      hidden: ({parent}) => {
-        const selectedType = parent?.sector_name
-        return !sectors.industry.includes(selectedType)
-      },
-    },
-    {
       name: 'description',
       title: 'Sector description',
       type: 'text',
