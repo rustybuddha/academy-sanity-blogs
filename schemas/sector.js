@@ -137,6 +137,16 @@ export default {
               type: 'object',
               fields: [
                 {
+                  name: 'cover',
+                  title: 'Cover Image',
+                  type: 'image',
+                  options: {
+                    hotspot: true,
+                  },
+                  description: 'Upload a cover image for stat card',
+                  validation: (Rule) => Rule.required(),
+                },
+                {
                   name: 'title',
                   title: 'Title',
                   type: 'string',
@@ -161,7 +171,7 @@ export default {
                   options: {
                     hotspot: true,
                   },
-                  description: 'Upload an icon for hearo promises card item',
+                  description: 'Upload an icon for stat item',
                   validation: (Rule) => Rule.required(),
                 },
               ],
