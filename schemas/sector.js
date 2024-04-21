@@ -358,7 +358,6 @@ export default {
           title: 'Partnership Experience',
           type: 'text',
           description: 'Enter the partnership experience description with TCL',
-          validation: (Rule) => Rule.required(),
         },
         {
           name: 'company_logo',
@@ -368,23 +367,19 @@ export default {
             hotspot: true,
           },
           description: 'Upload logo of the company with which TCL has partnership',
-          validation: (Rule) => Rule.required(),
         },
         {
           name: 'company_description',
           title: 'Company Description',
           type: 'text',
-          validation: (Rule) => Rule.required(),
         },
         {
           name: 'date',
           title: 'Date',
           type: 'string',
           description: 'Eg : July, 2021',
-          validation: (Rule) => Rule.required(),
         },
       ],
-      validation: (Rule) => Rule.required(),
     },
   ],
 }
