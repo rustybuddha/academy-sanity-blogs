@@ -127,6 +127,16 @@ export default {
           validation: (Rule) => Rule.required(),
         },
         {
+          name: 'cover',
+          title: 'Cover Image',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          description: 'Upload a cover image for stat card',
+          validation: (Rule) => Rule.required(),
+        },
+        {
           name: 'stats',
           title: 'Stats',
           type: 'array',
@@ -136,16 +146,6 @@ export default {
               title: 'Item',
               type: 'object',
               fields: [
-                {
-                  name: 'cover',
-                  title: 'Cover Image',
-                  type: 'image',
-                  options: {
-                    hotspot: true,
-                  },
-                  description: 'Upload a cover image for stat card',
-                  validation: (Rule) => Rule.required(),
-                },
                 {
                   name: 'title',
                   title: 'Title',
@@ -159,7 +159,7 @@ export default {
                   validation: (Rule) => Rule.required(),
                 },
                 {
-                  name: 'stats',
+                  name: 'stat',
                   title: 'Stat',
                   type: 'string',
                   validation: (Rule) => Rule.required(),
