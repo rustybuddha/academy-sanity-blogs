@@ -126,6 +126,49 @@ export default {
           ],
           validation: (Rule) => Rule.required(),
         },
+        {
+          name: 'stats',
+          title: 'Stats',
+          type: 'array',
+          of: [
+            {
+              name: 'item',
+              title: 'Item',
+              type: 'object',
+              fields: [
+                {
+                  name: 'title',
+                  title: 'Title',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: 'description',
+                  title: 'Description',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: 'stats',
+                  title: 'Stat',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+                {
+                  name: 'icon',
+                  title: 'Icon',
+                  type: 'image',
+                  options: {
+                    hotspot: true,
+                  },
+                  description: 'Upload an icon for hearo promises card item',
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
+            },
+          ],
+          validation: (Rule) => Rule.required(),
+        },
       ],
       validation: (Rule) => Rule.required(),
     },
