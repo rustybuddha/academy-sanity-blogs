@@ -356,6 +356,12 @@ export default {
           validation: (Rule) => Rule.required(),
         },
         {
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+          validation: (Rule) => Rule.required(),
+        },
+        {
           name: 'features',
           title: 'Features',
           type: 'array',
