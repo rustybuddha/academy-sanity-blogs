@@ -73,6 +73,18 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'is_additional_section_active',
+      title: 'Render Additional Section',
+      type: 'boolean',
+      description: 'Check to render the additional section',
+    },
+    {
+      name: 'is_partnership_section_active',
+      title: 'Render Partnership Section',
+      type: 'boolean',
+      description: 'Check to render the partnership section',
+    },
+    {
       name: 'hero_section',
       title: 'Hero Section',
       type: 'object',
@@ -238,6 +250,7 @@ export default {
           ],
         },
       ],
+      hidden: ({ document }) => !document.is_additional_section_active,
     },
     {
       name: 'takeaways_section',
@@ -439,6 +452,7 @@ export default {
           description: 'Eg : July, 2021',
         },
       ],
+      hidden: ({ document }) => !document.is_partnership_section_active,
     },
   ],
 }
