@@ -385,6 +385,31 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'sales_section',
+      title: 'Contact Sales Section',
+      type: 'object',
+      fields: [
+        {
+          name: 'heading',
+          title: 'Heading',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'para_1',
+          title: 'First Paragraph',
+          type: 'text',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'para_2',
+          title: 'Second Paragraph',
+          type: 'text',
+        },
+      ],
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'faqs_section',
       title: 'FAQs Section',
       type: 'object',
