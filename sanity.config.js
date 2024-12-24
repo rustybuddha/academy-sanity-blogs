@@ -5,9 +5,9 @@ import { schemaTypes } from './schemas';
 
 export default defineConfig({
   name: 'default',
-  title: 'timechain-labs-sanity-studio',
+  title: 'academy-sanity-blogs',
 
-  projectId: 'e3lypy0y',
+  projectId: 'jcnlheos',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
